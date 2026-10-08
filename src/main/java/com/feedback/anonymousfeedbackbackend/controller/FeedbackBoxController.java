@@ -17,7 +17,11 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/boxes")
-@CrossOrigin(origins = "*")
+@CrossOrigin(
+        origins = "*",
+        allowedHeaders = "*",
+        methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE, RequestMethod.OPTIONS}
+)
 public class FeedbackBoxController {
 
     @Autowired
