@@ -21,6 +21,11 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
+    @GetMapping("/health")
+    public ResponseEntity<String> health() {
+        return ResponseEntity.ok("Backend is active!");
+    }
+
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody User user) {
         if (userRepository.existsByEmail(user.getEmail())) {
